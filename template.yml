@@ -75,6 +75,16 @@ Mappings:
             bucketname: ianmckay-eu-north-1
         sa-east-1:
             bucketname: ianmckay-sa-east-1
+        af-south-1:
+            bucketname: ianmckay-af-south-1
+        ap-east-1:
+            bucketname: ianmckay-ap-east-1
+        ap-northeast-3:
+            bucketname: ianmckay-ap-northeast-3
+        eu-south-1:
+            bucketname: ianmckay-eu-south-1
+        me-south-1:
+            bucketname: ianmckay-me-south-1
 
 Conditions:
     S3Defined: !Not [ !Equals [ '', !Ref S3Bucket ] ]
@@ -174,3 +184,34 @@ Resources:
             FunctionName: !Ref ExecutorLambdaFunction
             MaximumRetryAttempts: 1
             Qualifier: "$LATEST"
+
+    ExecutionRole:
+        Type: AWS::IAM::Role
+        Properties:
+            MaxSessionDuration: 8400
+            AssumeRolePolicyDocument:
+                Version: '2012-10-17'
+                Statement:
+                  - Effect: Allow
+                    Principal:
+                        Service: resources.cloudformation.amazonaws.com
+                    Action: sts:AssumeRole
+            Path: "/"
+            Policies:
+              - PolicyName: ResourceTypePolicy
+                PolicyDocument:
+                    Version: '2012-10-17'
+                    Statement:
+                      - Effect: Allow
+                        Action:
+                          - "lambda:InvokeFunction"
+                          - "s3:DeleteObject"
+                          - "s3:GetObject"
+                          - "s3:ListBucket"
+                        Resource: "*"
+
+Outputs:
+
+    ExecutionRoleARN:
+        Description: The execution role ARN to use for registered types
+        Value: !GetAtt ExecutionRole.Arn
