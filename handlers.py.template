@@ -58,10 +58,6 @@ def check_progress(operationid, trackingid, progress, session):
             if 'error' in result:
                 progress.message = result['error']
                 progress.errorCode = HandlerErrorCode.GeneralServiceException
-    except s3client.exceptions.NoSuchKey as e:
-        progress.status = OperationStatus.FAILED
-        progress.message = str(e)
-        progress.errorCode = HandlerErrorCode.NotFound
     except:
         progress.callbackDelaySeconds = 20
         progress.callbackContext = {

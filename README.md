@@ -24,7 +24,7 @@ Click the above link to deploy the stack to your environment. This stack creates
 If you prefer, you can also manually upsert the [template.yml](https://github.com/iann0036/cfn-tf-custom-types/blob/master/template.yml) stack from source.
 
 <details>
-  <summary>For resource generation instructions:</summary>
+  <summary>Click here for resource generation instructions:</summary>
 
 ### Resource Generation
 

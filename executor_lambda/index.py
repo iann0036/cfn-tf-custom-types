@@ -135,8 +135,6 @@ def handler(event, context):
 
         tf = generate_tf(event['model'], event['logicalId'], event['providerTypeName'], event['providerFullName'], event['terraformTypeName'])
 
-        print(tf)
-
         print("Initializing provider")
         exec_call([os.path.dirname(os.path.realpath(__file__)) + '/terraform', 'init', '-input=false', '-no-color'], "/tmp/")
         if event['action'] == "DELETE":
