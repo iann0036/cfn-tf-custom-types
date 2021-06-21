@@ -341,21 +341,22 @@ def list_handler(
             Bucket=statebucketname,
             MaxKeys=1000,
             Prefix='state/###TFTYPENAME###/'
-        )['Contents']
+        )
 
-        for state_object in state_objects:
-            if state_object['Key'].endswith(".model.json"):
-                model = ResourceModel(tfcfnid=state_object['Key'].replace(".model.json", ""), ###ALLPROPS###)
+        if 'Contents' in state_objects:
+            for state_object in state_objects['Contents']:
+                if state_object['Key'].endswith(".model.json"):
+                    model = ResourceModel(tfcfnid=state_object['Key'].replace(".model.json", ""), ###ALLPROPS###)
 
-                state_str = s3client.get_object(Bucket=statebucketname, Key=state_object['Key'])['Body'].read()
-                if state_str == "":
-                    state_str = "{}"
-                model_state = json.loads(state_str)
-                
-                for k,v in model_state.items():
-                    setattr(model, k, v)
-                
-                models.append(model)
+                    state_str = s3client.get_object(Bucket=statebucketname, Key=state_object['Key'])['Body'].read()
+                    if state_str == "":
+                        state_str = "{}"
+                    model_state = json.loads(state_str)
+                    
+                    for k,v in model_state.items():
+                        setattr(model, k, v)
+                    
+                    models.append(model)
         
         return ProgressEvent(
             status=OperationStatus.SUCCESS,
