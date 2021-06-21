@@ -23,6 +23,14 @@ Click the above link to deploy the stack to your environment. This stack creates
 
 If you prefer, you can also manually upsert the [template.yml](https://github.com/iann0036/cfn-tf-custom-types/blob/master/template.yml) stack from source.
 
+### Resource Registration
+
+Resources may be registered from the AWS CloudFormation Public Registry. At the time of writing, only a small set of resources are supported due to limitations with service limits.
+
+To register the type, click the "Activate" button from the Registry: Public Extensions area. You may override the default type if you wish. For the "Execution role ARN" field, the outputs of the Execution Infrastructure stack has an ARN you may use. Logging config may be left blank and automatic updates is recommended to be enabled.
+
+If your desired type is not yet available, you can generate the type privately yourself using the instructions in the below expandable section:
+
 <details>
   <summary>Click here for resource generation instructions:</summary>
 
