@@ -29,6 +29,9 @@ def exec_call(args, cwd):
     except subprocess.TimeoutExpired as e:
         print(e.output)
         print(e)
+    except subprocess.CalledProcessError as e:
+        stderr = e.stderr
+        pass
 
     if stdout:
         pass # print(stdout.decode('utf-8'))
