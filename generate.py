@@ -654,6 +654,12 @@ def process_provider(provider_type):
             with open(providerdir / (cfndirname.lower() + ".json"), "w") as f:
                 f.write(json.dumps(schema, indent=4))
             
+            # delete .rpdk-config file
+            if (providerdir / ".rpdk-config").exists():
+                (providerdir / ".rpdk-config").unlink()
+
+            exec_call(['cfn', 'init', '-t', cfntypename, '-a', 'RESOURCE', 'python39', '--use-docker'], providerdir.absolute())
+
             exec_call(['cfn', 'generate'], providerdir.absolute())
 
             # update handlers.py
